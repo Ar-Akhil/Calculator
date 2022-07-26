@@ -5,7 +5,6 @@
 }
 .wrapper{
     height: 100vh;
-    width: 100wh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +22,6 @@
 }
 .output{
     width: 18em;
-    height: 4em;
     border: 1px solid black;
     background-color: white;
 }
@@ -33,11 +31,13 @@
     background-color: blueviolet;
 }
 .answer_btm{
-    height: 2.6em;
+    height: 1.4em;
     width: auto;
     background-color: burlywood;
+    text-align:end;
+    font-size: 2rem;
 }
-.buttons{
+.buttons_grid{
     display: grid;
     grid-template-columns:repeat(5,1fr);
     gap: 7px;
@@ -45,7 +45,7 @@
 .circle{
     border-radius: 20px !important;
 }
-.buttons>div{
+.buttons_grid>div{
    padding: 0.8em 0.5em 0.8em 0.5em;
    text-align: center;
    border:1px solid black;
