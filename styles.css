@@ -36,6 +36,7 @@
     background-color: burlywood;
     text-align:end;
     font-size: 2rem;
+    overflow: hidden;
 }
 .buttons_grid{
     display: grid;
