@@ -1,17 +1,20 @@
-const buttons = document.getElementById('button_grid').querySelectorAll('.number');
-const btmAnswer = document.getElementById('ansbtm');
-buttons.forEach(button =>
-    button.addEventListener('click', e =>{
-    let keyClicked = button.textContent;
-    let display = btmAnswer.textContent;
-    let key = e.target;
-    let action = key.dataset.action;
-    console.log(display)
-    if (btmAnswer.textContent == 0) {
-        btmAnswer.textContent = keyClicked; 
-        console.log(keyClicked.textContent)
-      } else {
-        btmAnswer.textContent = display + keyClicked;
-      }
-    
-}))
+const numbers= document.querySelectorAll('.number');
+const operators= document.querySelectorAll('.operator');
+const buttomAnswer = document.querySelector('.answer_btm');
+const topAnswer = document.querySelector('.answer_top');
+
+numbers.forEach(number => 
+  number.addEventListener('click', (e)=>{
+  console.log('number clicked');
+  if(buttomAnswer.textContent === '0'){
+    buttomAnswer.textContent = '';
+    buttomAnswer.textContent = e.target.textContent;
+  }else{
+    buttomAnswer.textContent += e.target.textContent;
+  }
+  }))
+
+operators.forEach(operator => 
+  operator.addEventListener('click', (e)=>
+  console.log('operator clicked'))
+)
