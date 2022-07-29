@@ -23,11 +23,11 @@ numbers.forEach((number) =>
   })
 );
 
-addEventListener('keypress', (e) => {
-  console.log(e.key)
-let keyclicked = e.key;
-buttomAnswer.textContent += keyclicked;
-});
+// addEventListener('keypress', (e) => {
+//   console.log(e.key)
+// let keyclicked = e.key;
+// buttomAnswer.textContent += keyclicked;
+// });
 
 operators.forEach((operator) =>
   operator.addEventListener("click", (e) => {
