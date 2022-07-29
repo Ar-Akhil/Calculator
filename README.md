@@ -1,3 +1,3 @@
 # Calculator
 
-random details
+A Sick looking Calculator.
