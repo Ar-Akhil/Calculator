@@ -23,14 +23,23 @@ numbers.forEach((number) =>
   })
 );
 
+addEventListener('keypress', (e) => {
+  console.log(e.key)
+let keyclicked = e.key;
+buttomAnswer.textContent += keyclicked;
+});
+
 operators.forEach((operator) =>
   operator.addEventListener("click", (e) => {
+    console.log('clicked')
     sign = e.target.textContent;
-    if (firstnumber == 0) {
+    if (firstnumber == '0') {
       firstnumber = buttomAnswer.textContent;
+      topAnswer.textContent = firstnumber + sign;
       buttomAnswer.textContent = "";
     } else {
       secondNumber = buttomAnswer.textContent;
+      buttomAnswer.textContent = "";
     }
   })
 );
@@ -52,6 +61,7 @@ plusOrMinus.addEventListener("click", () => {
 
 equal.addEventListener("click", () => {
   secondNumber = buttomAnswer.textContent;
+  topAnswer.textContent = firstnumber + sign + secondNumber + '=';
   switch (sign) {
     case "+":
       result = Number(firstnumber) + Number(secondNumber);
@@ -66,7 +76,8 @@ equal.addEventListener("click", () => {
       result = Number(firstnumber) / Number(secondNumber);
       break;
   }
-  buttomAnswer.textContent = result.toFixed(2);
+  buttomAnswer.textContent = result;
+  firstnumber = result;
 });
 
 clear.addEventListener('click',()=>{
@@ -75,6 +86,7 @@ number = 0;
 firstnumber = 0;
 secondNumber = 0;
 buttomAnswer.textContent = '0'
+topAnswer.textContent = ''
 })
 
 squareRoot.addEventListener('click',()=>{
