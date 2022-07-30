@@ -5,6 +5,7 @@
 }
 body{
     font-size: 20px;
+    font-family: 'Wallpoet', cursive;
 }
 .wrapper{
     height: 100vh;
@@ -13,8 +14,8 @@ body{
     align-items: center;
 }
 .calc_container{
-    height: 25em;
-    width: 20em;
+    height: 27em;
+    width: 23em;
     border-radius: 20px;
     border:3px solid black;
     background-color:gray;
@@ -24,7 +25,7 @@ body{
     align-items: center;
 }
 .output{
-    width: 17.2em;
+    width: 20em;
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
@@ -32,16 +33,14 @@ body{
     overflow: hidden;
 }
 .answer_top{
-    height: 1.4em;
+    height: 1.5em;
     padding-left: 0.5em;
-    font-family: 'Press Start 2P';
 }
 .answer_btm{
-    height: 1.1em;
+    height: 1.3em;
     text-align:end;
     font-size: 2.2rem;
     overflow: hidden;
-    font-family: 'Press Start 2P'
 }
 .buttons_grid{
     display: grid;
@@ -52,15 +51,21 @@ body{
     border-radius: 20px !important;
 }
 .buttons_grid>div{
-   padding: 0.8em 0.5em 0.8em 0.5em;
+   padding: 0.7em 0.4em 0.7em 0.4em;
    text-align: center;
    border:1px solid black;
    border-radius: 10px;
    background-color: white;
    user-select: none;
    box-shadow: 3px 3px black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
-.CE{
+.root{
+    grid-row: 1/3;
+}
+.clear{
     grid-row: 4/6;
 }
 .equal{
@@ -69,4 +74,27 @@ body{
 .add{
     grid-row: 4/6;
     grid-column-start: 5;
+}
+
+@media screen and (max-width: 450px){
+    .calc_container{
+        height: 98%;
+        width: 98%;
+    }
+    .buttons_grid{
+        height: 60%;
+    }
+    .buttons_grid>div{
+        padding: 0.2em 0.1em 0.2em 0.1em;
+        font-size: 1.5rem;
+    }
+    .answer_btm{
+        font-size: 3.5rem;
+    }
+    .output{
+        width: 98%
+    }
+    .answer_top{
+        font-size: 2rem;
+    }
 }
