@@ -7,6 +7,11 @@ const clear = document.querySelector(".CE");
 const clr = document.querySelector(".clear");
 const squareRoot = document.querySelector(".root");
 const plusOrMinus = document.querySelector(".plus_minus");
+
+//audio
+const numBtn = new Audio('assets/button.mp3');
+const optBtn = new Audio('assets/operator.mp3');
+
 let sign = "";
 let number = 0;
 let firstnumber = 0;
@@ -14,6 +19,7 @@ let secondNumber = 0;
 
 numbers.forEach((number) =>
   number.addEventListener("click", (e) => {
+    numBtn.play();
     if (buttomAnswer.textContent === "0") {
       buttomAnswer.textContent = "";
       buttomAnswer.textContent = e.target.textContent;
@@ -31,7 +37,7 @@ numbers.forEach((number) =>
 
 operators.forEach((operator) =>
   operator.addEventListener("click", (e) => {
-    console.log('clicked')
+    optBtn.play();
     sign = e.target.textContent;
     if (firstnumber == '0') {
       firstnumber = buttomAnswer.textContent;
@@ -45,6 +51,7 @@ operators.forEach((operator) =>
 );
 
 clr.addEventListener("click", () => {
+  numBtn.play();
   let len = buttomAnswer.textContent.length;
   if(len>1){
     buttomAnswer.textContent = buttomAnswer.textContent.slice(0,len-1);
@@ -56,11 +63,13 @@ clr.addEventListener("click", () => {
 plusOrMinus.addEventListener("click", () => {
   if(buttomAnswer.textContent>1){
     buttomAnswer.textContent = '-' + buttomAnswer.textContent;
+    numBtn.play();
   }
 })
 
 equal.addEventListener("click", () => {
   secondNumber = buttomAnswer.textContent;
+  numBtn.play();
   topAnswer.textContent = firstnumber + sign + secondNumber + '=';
   switch (sign) {
     case "+":
@@ -87,9 +96,11 @@ firstnumber = 0;
 secondNumber = 0;
 buttomAnswer.textContent = '0'
 topAnswer.textContent = ''
+optBtn.play();
 })
 
 squareRoot.addEventListener('click',()=>{
+  numBtn.play();
   let value = Math.sqrt(Number(buttomAnswer.textContent));
   buttomAnswer.textContent = value;
 })
