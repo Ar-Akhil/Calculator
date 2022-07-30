@@ -8,7 +8,7 @@ const clr = document.querySelector(".clear");
 const squareRoot = document.querySelector(".root");
 const plusOrMinus = document.querySelector(".plus_minus");
 
-//audio
+//audio files
 const numBtn = new Audio('assets/button.mp3');
 const optBtn = new Audio('assets/operator.mp3');
 
@@ -17,6 +17,7 @@ let number = 0;
 let firstnumber = 0;
 let secondNumber = 0;
 
+//1-9 buttons
 numbers.forEach((number) =>
   number.addEventListener("click", (e) => {
     numBtn.play();
@@ -35,6 +36,7 @@ numbers.forEach((number) =>
 // buttomAnswer.textContent += keyclicked;
 // });
 
+//Operation signs
 operators.forEach((operator) =>
   operator.addEventListener("click", (e) => {
     optBtn.play();
@@ -50,6 +52,7 @@ operators.forEach((operator) =>
   })
 );
 
+//Backspace button
 clr.addEventListener("click", () => {
   numBtn.play();
   let len = buttomAnswer.textContent.length;
@@ -60,6 +63,7 @@ clr.addEventListener("click", () => {
   }
 })
 
+//negative and positive sign
 plusOrMinus.addEventListener("click", () => {
   if(buttomAnswer.textContent>1){
     buttomAnswer.textContent = '-' + buttomAnswer.textContent;
@@ -67,6 +71,7 @@ plusOrMinus.addEventListener("click", () => {
   }
 })
 
+//Equal operrtor
 equal.addEventListener("click", () => {
   secondNumber = buttomAnswer.textContent;
   numBtn.play();
@@ -89,6 +94,7 @@ equal.addEventListener("click", () => {
   firstnumber = result;
 });
 
+//Full screen clear button
 clear.addEventListener('click',()=>{
 sign = "";
 number = 0;
@@ -99,6 +105,7 @@ topAnswer.textContent = ''
 optBtn.play();
 })
 
+//Square root operation
 squareRoot.addEventListener('click',()=>{
   numBtn.play();
   let value = Math.sqrt(Number(buttomAnswer.textContent));
